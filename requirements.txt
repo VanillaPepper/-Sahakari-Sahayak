@@ -1,0 +1,17 @@
+streamlit>=1.38
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.1.0
+langchain-chroma>=0.2.0
+langchain-text-splitters>=0.3.0
+chromadb>=0.5.5
+pypdf>=4.3.0
+google-genai>=1.0.0
+gTTS>=2.5.0
+audio-recorder-streamlit>=0.0.10
+
+# Fixes ChromaDB's sqlite3 version requirement on Streamlit Community Cloud
+# (its base image ships an older system sqlite3 than Chroma needs).
+# Harmless to include even if your deployment target already has a new
+# enough sqlite3 — app.py only swaps it in when the import succeeds.
+pysqlite3-binary; platform_system == "Linux"

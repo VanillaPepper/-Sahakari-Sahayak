@@ -1,0 +1,15 @@
+# Secrets — never commit real keys
+.streamlit/secrets.toml
+
+# Vector DB (rebuild from data/knowledge_base/ instead of committing this)
+data/chroma_db/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store

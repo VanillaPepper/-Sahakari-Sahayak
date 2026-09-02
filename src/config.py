@@ -26,7 +26,7 @@ CHROMA_PERSIST_DIR.mkdir(parents=True, exist_ok=True)
 # model — a good default for a public-facing assistant. Swap to
 # "gemini-2.5-pro" for higher-quality (slower/costlier) answers, or a
 # "gemini-3.x-preview" model if you want to try the newest release.
-CHAT_MODEL = "gemini-2.5-flash"
+CHAT_MODEL = "gemini-3.6-flash"
 
 # Gemini's current embedding model (used to build the vector index).
 EMBEDDING_MODEL = "models/gemini-embedding-001"

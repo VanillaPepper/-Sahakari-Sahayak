@@ -151,6 +151,10 @@ def handle_user_turn(user_text: str):
                 answer, sources = rag_engine.run_chain(
                     chain, retriever is not None, user_text, st.session_state["lc_history"]
                 )
+                if isinstance(answer, list) and len(answer) > 0 and isinstance(answer[0], dict):
+                    answer = answer[0].get('text', str(answer))
+                elif isinstance(answer, dict):
+                    answer = answer.get('text', str(answer))
             except Exception as exc:  # noqa: BLE001
                 answer = (
                     "Sorry, I ran into an error talking to Gemini. Please check "
